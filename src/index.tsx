@@ -1,11 +1,11 @@
+import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink, makeVar } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { ApolloClient, InMemoryCache, gql, ApolloProvider, makeVar, createHttpLink } from '@apollo/client'
-import { Auth0Provider, useAuth0 } from '@auth0/auth0-react'
-import { setContext } from '@apollo/client/link/context'
 
 export const starredVar = makeVar<string[]>([]);
 

@@ -13,7 +13,7 @@ const DeleteBusiness = ({ refetch }: { refetch: () => void }) => {
                 variables: { where: { businessId: businessId } }
             })
 
-            console.log("Business Deleted successfully");
+            console.log("Business Deleted successfully", data);
             setBusinessId("")
             refetch();
         } catch (error) {

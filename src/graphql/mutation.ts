@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import { User } from "@auth0/auth0-react";
 
 export const ADD_BUSINESS = gql`
   mutation CreateBusiness($input: [BusinessCreateInput!]!) {

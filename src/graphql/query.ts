@@ -1,5 +1,4 @@
 import { gql } from "@apollo/client";
-import { useAuth0 } from "@auth0/auth0-react";
 
 export const BUSINESS_DETAILS_FRAGMENT = gql`
   fragment businessDetails on Business {

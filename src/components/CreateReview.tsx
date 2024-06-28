@@ -48,6 +48,9 @@ const CreateReview = (props: ReviewProps) => {
         }
     }
 
+    if(addingReview) return <div>Adding Review</div>
+    if(reviewError) return <div>Something went wrong</div>
+
     return (
         <td>
             <form onSubmit={handleSubmit}>

@@ -23,7 +23,7 @@ const UpdateBusiness = ({refetch}: {refetch: ()=>void} ) => {
                 })
             })
 
-            console.log("Business updated Successfully")
+            console.log("Business updated Successfully", data)
             refetch();
         } catch (error) {
             console.error("Error adding business:", error);
