@@ -46,10 +46,8 @@ const AppWithApollo = () => {
           fields: {
             isStarred: {
               read(_, { readField }) {
-                // const businessId = readField<string>("businessId");
-                // return businessId ? starredVar().includes(businessId) : false
-                // @ts-ignore
-                return starredVar().includes(readField("businessId"));
+                const businessId = readField<string>("businessId");
+                return businessId && starredVar() ? starredVar().includes(businessId) : false
               },
             },
           },
