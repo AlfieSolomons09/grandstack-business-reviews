@@ -6,7 +6,7 @@ const Profile = () =>{
     // console.log(user?.picture)
     return (
         <div>
-        isAuthenticated && (
+        {isAuthenticated && (
             <div style={{padding: "10px"}}>
                 <img
                     src={user?.picture}
@@ -15,7 +15,7 @@ const Profile = () =>{
                 />
                 <strong>{user?.name}</strong>
             </div>
-        )
+        )}
         </div>
     )
 }
