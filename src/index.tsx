@@ -13,7 +13,7 @@ const AppWithApollo = () => {
   const { getAccessTokenSilently, isAuthenticated } = useAuth0()
 
   const httpLink = createHttpLink({
-    uri: "http://localhost:4000"
+    uri: process.env.REACT_APP_GRAPHQL_URI
   })
 
   const authLink = setContext(async (_, { headers }) => {
@@ -54,7 +54,6 @@ const AppWithApollo = () => {
         },
       },
     }),
-    // uri: "http://localhost:4000/"
   })
 
   return (
@@ -64,34 +63,18 @@ const AppWithApollo = () => {
   )
 }
 
-
-
-// client.query({
-//   query: gql(`{
-//     businesses{
-//       name
-//     }
-//   }`)
-// })
-//   .then((result) => console.log(result))
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-xe4efgq85eubuz2t.us.auth0.com"
-      clientId="m8vwSixpfNfwHSNHRHQVggIO2yIsOtYs"
+      domain={process.env.REACT_APP_AUTH0_DOMAIN!}
+      clientId={process.env.REACT_APP_AUTH0_CLIENT_ID!}
       redirectUri={window.location.origin}
-      // audience="https://reviews.grandstack.io"
     >
       <AppWithApollo/>
     </Auth0Provider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function 
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
